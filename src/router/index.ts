@@ -19,7 +19,7 @@ export const navRoutes: Array<RouteRecordRaw> = [
     name: 'DashBoard',
     meta: {
       requiresAuth: false,
-      title: '监控指标',
+      title: 'DashBoard',
     },
   },
 ]
