@@ -1,16 +1,84 @@
-# Vue 3 + TypeScript + Vite
-
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
-
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
-
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+## Vue 3 + TypeScript + Vite
+### 初始化
+#### git
+git init
+#### 删除无用组件
+#### 配置别名@
+vite.config.ts中配置
+tsconfig.json中配置
+### 项目结构
+src
+	api
+	assets
+	components
+	config
+	hooks
+	plugins
+	router
+	store
+	types
+	utils
+	views
+### 安装相关工具
+#### Vue
+```bash
+yarn add pinia
+# or with npm
+npm install pinia
+```
+```bash
+yarn add vue-router@4
+npm install vue-router@4
+```
+```bash
+npm install axios
+yarn add axios
+```
+#### UI 框架
+```bash
+npm install element-plus --save
+yarn add element-plus
+```
+#### 样式
+```bash
+# 格式化样式
+npm install --save normalize.css
+# main.js/ts 引入
+import 'normalize.css/normalize.css'
+```
+```bash
+npm install postcss-px-to-viewport --save-dev
+yarn add -D postcss-px-to-viewport
+```
+```bash
+npm i autoprefixer -D
+```
+```bash
+npm i sass -D
+```
+#### 工具
+```bash
+npm i js-cookie
+```
+```bash
+npm install dayjs --save
+```
+```bash
+npm i --save lodash
+```
+```bash
+# 浏览器唯一标识
+npm i @fingerprintjs/fingerprintjs
+```
+```bash
+npm i jwt-decode
+```
+#### 便捷
+```bash
+# 自动引入vue api
+npm i -D unplugin-auto-import
+```
+```bash
+# 自动引入vue组件
+npm i unplugin-vue-components -D
+```
