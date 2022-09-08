@@ -1,3 +1,5 @@
+import jwt_decode from 'jwt-decode'
+
 // 防抖
 export const debounce = (func: () => void, time = 500) => {
   let timeId = window.timeId || null
@@ -78,4 +80,9 @@ export const toPer = (num: number) => {
 export const genRandom = (minNum = 10, maxNum = 100) => {
   const strNum: string = Math.random() * (maxNum - minNum + 1) + minNum + ''
   return parseInt(strNum, 10)
+}
+
+// jwt token 解析
+export const jwtDecode = (token: string): {} => {
+  return jwt_decode(token);
 }

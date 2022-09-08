@@ -1,6 +1,7 @@
 /*
   时间处理工具
 */
+import useMessage from '@/hooks/useMessage'
 import dayjs from 'dayjs'
 // dayjs 插件引入
 import quarterOfYear from 'dayjs/plugin/quarterOfYear'
@@ -74,4 +75,26 @@ export const isSame = (
 */
 export const isAfter = (curTime: date, targetTime: date): boolean => {
   return dayjs(curTime).isAfter(targetTime)
+}
+
+/*
+  当前时间是否在另一个提供的日期时间之后
+  @param curTime：当前时间
+  @param targetTime：另一个提供的日期时间
+*/
+export const isDuring = (
+  curTime: date,
+  timeArr: [startTime: date, endTime: date]
+): boolean => {
+  const c = dayjs(curTime)
+  const s = dayjs(timeArr[0])
+  const e = dayjs(timeArr[1])
+  if (isAfter(s, e)) {
+    useMessage('error', '时间范围错误')
+    return false
+  }
+  if (isAfter(c, s) && isBefore(c, e)) {
+    return true
+  }
+  return false
 }
