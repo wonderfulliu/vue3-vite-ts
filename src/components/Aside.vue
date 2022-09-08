@@ -5,17 +5,32 @@ import { navRoutes } from '@/router'
 import { useRouter, useRoute } from 'vue-router'
 const route = useRoute()
 
-const handleOpen = (key, keyPath) => {
+const onActiveMenu = computed(() => {
+  const route = useRoute()
+  const { meta, path } = route
+  if (meta.activeMenu) {
+    return meta.activeMenu
+  }
+  return path
+})
+
+const handleOpen: ((index: string, indexPath: string[]) => any) | undefined = (
+  index,
+  indexPath
+) => {
   // console.log(key, keyPath)
 }
-const handleClose = (key, keyPath) => {
+const handleClose: ((index: string, indexPath: string[]) => any) | undefined = (
+  index,
+  indexPath
+) => {
   // console.log(key, keyPath)
 }
 </script>
 
 <template>
   <el-menu
-    :default-active="route.path"
+    :default-active="onActiveMenu"
     :collapse="false"
     :router="true"
     :unique-opened="true"
@@ -24,33 +39,36 @@ const handleClose = (key, keyPath) => {
     background-color="transparent"
   >
     <template v-for="(route, index) in navRoutes" :key="index">
-      <template v-if="!route.meta.hidden">
+      <template v-if="route.meta!.hidden">
         <el-sub-menu v-if="route.children?.length" :index="route.path">
           <template #title>
             <el-icon>
-              <SvgIcon :name="route.meta.icon" />
+              <SvgIcon :name="route.meta!.icon" />
             </el-icon>
-            <span>{{ route.meta.title }}</span>
+            <span>{{ route.meta!.title }}</span>
           </template>
 
-          <template v-for="(inner_route, inner_index) in route.children" :key="inner_index">
+          <template
+            v-for="(inner_route, inner_index) in route.children"
+            :key="inner_index"
+          >
             <el-menu-item
-              v-if="!inner_route.meta.hidden"
+              v-if="!inner_route.meta!.hidden"
               :index="route.path + '/' + inner_route.path"
             >
               <el-icon>
-                <SvgIcon :name="inner_route.meta.icon" />
+                <SvgIcon :name="inner_route.meta!.icon" />
               </el-icon>
-              <span>{{ inner_route.meta.title }}</span>
+              <span>{{ inner_route.meta!.title }}</span>
             </el-menu-item>
           </template>
         </el-sub-menu>
 
         <el-menu-item v-else :index="route.path">
           <el-icon>
-            <SvgIcon :name="route.meta.icon" />
+            <SvgIcon :name="route.meta!.icon" />
           </el-icon>
-          <span>{{ route.meta.title }}</span>
+          <span>{{ route.meta!.title }}</span>
         </el-menu-item>
       </template>
     </template>
