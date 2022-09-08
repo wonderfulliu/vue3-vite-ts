@@ -12,6 +12,8 @@ import autoprefixer from 'autoprefixer'
 import AutoImport from 'unplugin-auto-import/vite'
 // 自动引入 Vue 组件
 import Components from 'unplugin-vue-components/vite'
+// 自动导入用到的 Element Plus 组件
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,9 +22,11 @@ export default defineConfig({
     vueJsx({}),
     AutoImport({
       imports: ['vue'],
+      resolvers: [ElementPlusResolver()],
       dts: 'src/types/auto-imports.d.ts'
     }),
     Components({
+      resolvers: [ElementPlusResolver()],
       dts: 'src/types/components.d.ts',
     }),
   ],

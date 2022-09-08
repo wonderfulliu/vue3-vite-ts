@@ -1,3 +1,6 @@
+/*
+  模块状态管理
+*/ 
 import { defineStore } from 'pinia'
 
 export const useMainStore = defineStore('main', {

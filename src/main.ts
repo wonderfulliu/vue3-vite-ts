@@ -1,6 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+// UI 框架
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 // 样式格式化
 import 'normalize.css/normalize.css'
 
@@ -14,4 +18,4 @@ import pinia from '@/store'
 import '@/styles/common.scss'
 
 const app = createApp(App)
-app.use(router).use(pinia).mount('#app')
+app.use(router).use(pinia).use(ElementPlus).mount('#app')

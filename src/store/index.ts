@@ -1,6 +1,8 @@
 import { createPinia } from 'pinia'
+import PiniaPersist from '@/plugins/pinia-persist/persist'
 
 const pinia = createPinia()
+pinia.use(PiniaPersist)
 
 export default pinia
 
