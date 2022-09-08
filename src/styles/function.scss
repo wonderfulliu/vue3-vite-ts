@@ -1,0 +1,4 @@
+// 高度转为vh
+@function h($h, $vh: 1080px) {
+  @return 100vh * calc(calc($h) / $vh)
+}

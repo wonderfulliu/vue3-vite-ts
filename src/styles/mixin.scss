@@ -1,0 +1,32 @@
+// 多余文本隐藏
+@mixin ellipsis($line: 1) {
+  overflow: hidden; // 超出的文本隐藏
+  text-overflow: ellipsis; // 溢出用省略号显示
+  white-space: nowrap; // 溢出不换行
+  -webkit-line-clamp: $line; // 显示行数
+}
+
+// flex 布局
+@mixin flex($d: row, $jc: flex-start, $ai: center) {
+  display: flex;
+  flex-direction: $d;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+// 毛玻璃
+@mixin frosted-glass($bgc: rgba(255, 255, 255, .2), $bf: 8px) {
+  background: $bgc;
+  backdrop-filter: blur($bf);
+}
+
+// 字体缩放
+@mixin font-size($f: 12px, $c: 0.83) {
+  display: block;
+  font-size: $f;
+  // 方式 1
+  // transform: scale($c, $c);
+  // transform-origin: left;
+  // 方式 2，没有容器收缩问题
+  zoom: $c;
+}

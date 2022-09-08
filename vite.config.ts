@@ -33,11 +33,11 @@ export default defineConfig({
   },
   css: {
     /* CSS 预处理器 */
-    // preprocessorOptions: {
-    //   scss: {
-    //     additionalData: '@import "src/assets/styles/var.scss";'
-    //   }
-    // },
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/styles/index.scss";'
+      }
+    },
     postcss: {
       plugins: [
         postCssPxToViewPort({

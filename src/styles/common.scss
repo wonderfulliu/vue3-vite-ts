@@ -1,0 +1,35 @@
+// 通用样式
+:root {}
+
+::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+html, body, #app {
+  height: 100vh;
+  font-family: $font-family;
+}
+
+// 表格的各种状态颜色类
+.state-error {
+  color: $error-color;
+}
+.state-primary {
+  color: $primary-color;
+}
+.state-default {
+  color: $default-color;
+}
+.state-success {
+  color: $success-color;
+}
