@@ -73,3 +73,9 @@ export const toPer = (num: number) => {
   if (!num) return 0 + '%'
   return (num * 100).toFixed(2) + '%'
 }
+
+// 范围随机数
+export const genRandom = (minNum = 10, maxNum = 100) => {
+  const strNum: string = Math.random() * (maxNum - minNum + 1) + minNum + ''
+  return parseInt(strNum, 10)
+}

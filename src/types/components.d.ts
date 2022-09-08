@@ -7,7 +7,30 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AddOrder: typeof import('./../components/AddOrder.vue')['default']
+    Adjust: typeof import('./../components/Adjust.vue')['default']
+    Aside: typeof import('./../components/Aside.vue')['default']
+    BreadCrumb: typeof import('./../components/BreadCrumb.vue')['default']
+    Cell: typeof import('./../components/Cell.vue')['default']
+    Dialog: typeof import('./../components/Dialog.vue')['default']
+    DialogAlert: typeof import('./../components/DialogAlert.vue')['default']
+    Drawer: typeof import('./../components/Drawer.vue')['default']
+    DrawerTable: typeof import('./../components/DrawerTable.vue')['default']
+    Header: typeof import('./../components/Header.vue')['default']
+    Layout: typeof import('./../components/Layout.vue')['default']
+    LayoutRouter: typeof import('./../components/LayoutRouter.vue')['default']
+    Pagination: typeof import('./../components/Pagination.vue')['default']
+    Panel: typeof import('./../components/Panel.vue')['default']
+    Progress: typeof import('./../components/Progress.vue')['default']
+    Resize: typeof import('./../components/Resize.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Search: typeof import('./../components/Search.vue')['default']
+    SearchItem: typeof import('./../components/SearchItem.vue')['default']
+    SvgIcon: typeof import('./../components/SvgIcon.vue')['default']
+    Table: typeof import('./../components/Table.vue')['default']
+    TableSearch: typeof import('./../components/TableSearch.vue')['default']
+    Title: typeof import('./../components/Title.vue')['default']
+    Tooltip: typeof import('./../components/Tooltip.vue')['default']
   }
 }
