@@ -20,22 +20,22 @@
 </template>
 
 <style lang="scss" scoped>
-$mb: 20px;
+$mb: h(20px);
 .common-layout {
   height: 100vh;
-  background-color: #f2f2f4;
+  background-color: $background-color;
   .el-container {
-    height: 100%;
     .el-header {
       margin-bottom: $mb;
+      height: $layout-header-height;
     }
     .el-aside {
-      width: 264px;
-      height: calc(100vh - $headerHeight - $mb);
+      width: $layout-aside-width;
+      height: calc(100vh - $layout-header-height - $mb);
     }
     .main-container {
-      height: calc(100vh - $headerHeight - $mb);
-      padding: 0 15px 15px 15px;
+      height: calc(100vh - $layout-header-height - $mb);
+      padding: 0 15px h(15px) 15px;
       background-color: transparent;
     }
   }

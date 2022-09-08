@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue-demi'
 import SvgIcon from '@/components/SvgIcon.vue'
 import logo from '@/assets/logo.png'
 import avatar from '@/assets/avatar.png'
 import arrow from '@/assets/down@2x.png'
-import useGlobalStore from '@/store/global'
+import { useGlobalStore } from '@/store/global'
 import { getCookie } from '@/utils/storage'
 import { USERINFO } from '@/config/constant'
 import router from '@/router'
@@ -61,7 +60,7 @@ const handleCommand = async () => {
 <style lang="scss" scoped>
 .header-container {
   box-sizing: border-box;
-  height: $headerHeight;
+  height: 100%;
   padding: 20px 0px;
   @include flex($jc: space-between);
   background-color: transparent;

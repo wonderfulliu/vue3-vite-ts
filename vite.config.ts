@@ -29,6 +29,7 @@ export default defineConfig({
       dts: 'src/types/auto-imports.d.ts'
     }),
     Components({
+      dirs: ['src/components', 'src/layout'],
       resolvers: [ElementPlusResolver()],
       dts: 'src/types/components.d.ts',
     }),
@@ -36,6 +37,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
+      // 定义vue的别名，如果使用其他的插件，可能会用到别名
+      'vue': 'vue/dist/vue.esm-bundler.js'
     }
   },
   css: {

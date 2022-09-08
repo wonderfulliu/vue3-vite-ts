@@ -11,6 +11,10 @@ declare module 'vue-router' {
   }
 }
 
+const Layout = {
+  template: '<router-view></router-view>'
+}
+
 export const navRoutes: Array<RouteRecordRaw> = [
   // 监控指标
   {
