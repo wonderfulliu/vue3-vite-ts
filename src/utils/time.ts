@@ -3,12 +3,12 @@
 */
 import useMessage from '@/hooks/useMessage'
 import dayjs from 'dayjs'
-// dayjs 插件引入
-import quarterOfYear from 'dayjs/plugin/quarterOfYear'
 // dayjs 引入插件
+import quarterOfYear from 'dayjs/plugin/quarterOfYear'
 dayjs.extend(quarterOfYear)
 
-type date = string | number | dayjs.Dayjs | Date | null | undefined
+type day_js = dayjs.Dayjs
+type date = string | number | day_js | Date | null | undefined
 type unit = dayjs.ManipulateType | undefined
 
 /*
@@ -17,7 +17,7 @@ type unit = dayjs.ManipulateType | undefined
 export const format = (
   date?: date,
   template: string = 'YYYY-MM-DD HH:mm:ss'
-) => {
+): string => {
   return dayjs(date).format(template)
 }
 
@@ -26,7 +26,7 @@ export const format = (
   @param value：增加的值
   @param unit：增加的单位：day:d week:w month:m quarter:Q year:y hour:h minute:m second:s millisecond:ms
 */
-export const add = (value: number, unit?: unit): dayjs.Dayjs => {
+export const add = (value: number, unit?: unit): day_js => {
   return dayjs().add(value, unit)
 }
 
@@ -35,7 +35,7 @@ export const add = (value: number, unit?: unit): dayjs.Dayjs => {
   @param value：减少的值
   @param unit：减少的单位：day:d week:w month:m quarter:Q year:y hour:h minute:m second:s millisecond:ms
 */
-export const subtract = (value: number, unit?: unit): dayjs.Dayjs => {
+export const subtract = (value: number, unit?: unit): day_js => {
   return dayjs().subtract(value, unit)
 }
 
