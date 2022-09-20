@@ -3,6 +3,7 @@ import App from './App.vue'
 
 // UI 框架
 import ElementPlus from 'element-plus'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import 'element-plus/dist/index.css'
 
 // 样式格式化
@@ -18,4 +19,9 @@ import pinia from '@/store'
 import '@/styles/common.scss'
 
 const app = createApp(App)
-app.use(router).use(pinia).use(ElementPlus).mount('#app')
+app
+  .use(router)
+  .use(pinia)
+  // size：使用的表单组件全部 small 格式，语言为中文
+  .use(ElementPlus, { size: 'small', locale: zhCn })
+  .mount('#app')
