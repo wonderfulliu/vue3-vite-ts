@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./../layout/Header.vue')['default']
     Layout: typeof import('./../layout/Layout.vue')['default']
     Pagination: typeof import('./../components/Pagination.vue')['default']
+    Preview: typeof import('./../components/Preview.vue')['default']
     Progress: typeof import('./../components/Progress.vue')['default']
     Resize: typeof import('./../components/Resize.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

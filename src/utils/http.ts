@@ -2,6 +2,18 @@ import axios from 'axios'
 import useMessage from '@/hooks/useMessage'
 import { useGlobalStore } from '@/store/global'
 
+// Add a response interceptor
+type BaseResponse = {
+  code: number
+  data: any
+  msg: string
+}
+declare module 'axios' {
+  interface AxiosInstance {
+    (config: AxiosRequestConfig): Promise<BaseResponse>
+  }
+}
+
 const { VITE_API_BASE_URL, VITE_API_PREFIX } = import.meta.env
 
 const instance = axios.create({
@@ -29,6 +41,7 @@ instance.interceptors.response.use(
     // console.log(response);
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
+    // response 需要根据实际情况进行处理
     return response
     // return Promise.resolve(response)
   },
@@ -39,6 +52,6 @@ instance.interceptors.response.use(
   }
 )
 
-export const baseUrl = VITE_API_BASE_URL
-export const prefix = VITE_API_PREFIX
+export const baseUrl: string = VITE_API_BASE_URL
+export const prefix: string = VITE_API_PREFIX
 export default instance
