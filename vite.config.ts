@@ -22,7 +22,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx({}),
-    svgBuilder('./src/assets/svg'),
+    svgBuilder('./src/assets/svg/'),
     AutoImport({
       imports: ['vue'],
       resolvers: [ElementPlusResolver()],
