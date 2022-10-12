@@ -8,7 +8,7 @@ type Props = {
   svg?: string
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   svg: 'warning'
 })
 
@@ -34,6 +34,15 @@ const cancel = () => {
   emit('closed')
   emit('update:modelValue', false)
 }
+
+const modelValue = computed({
+  get() {
+    return props.modelValue
+  },
+  set(val) {
+    emit('update:modelValue', val)
+  }
+})
 </script>
 
 <template>

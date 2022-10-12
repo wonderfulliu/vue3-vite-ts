@@ -14,7 +14,7 @@ type Props = {
   beforeClose?: (done: Function) => void
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   visible: false,
   width: 600,
   top: '15vh',
@@ -55,6 +55,15 @@ const cancel = () => {
   emit('cancel')
   emit('update:modelValue', false)
 }
+
+const modelValue = computed({
+  get() {
+    return props.modelValue
+  },
+  set(val) {
+    emit('update:modelValue', val)
+  }
+})
 </script>
 
 <template>
