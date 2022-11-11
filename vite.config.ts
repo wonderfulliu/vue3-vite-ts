@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-import path from "path"
+import path from 'path'
 // Provides Vue 3 JSX & TSX support with HMR.
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // px 转为 vw
@@ -18,7 +18,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { svgBuilder } from './src/plugins/svgBuilder'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(async ({ command, mode }) => ({
   plugins: [
     vue(),
     vueJsx({}),
@@ -26,7 +26,7 @@ export default defineConfig({
     AutoImport({
       imports: ['vue'],
       resolvers: [ElementPlusResolver()],
-      dts: 'src/types/auto-imports.d.ts'
+      dts: 'src/types/auto-imports.d.ts',
     }),
     Components({
       dirs: ['src/components', 'src/layout'],
@@ -36,17 +36,17 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      '@': path.resolve(__dirname, 'src'),
       // 定义vue的别名，如果使用其他的插件，可能会用到别名
-      'vue': 'vue/dist/vue.esm-bundler.js'
-    }
+      vue: 'vue/dist/vue.esm-bundler.js',
+    },
   },
   css: {
     /* CSS 预处理器 */
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/styles/index.scss";'
-      }
+        additionalData: '@import "@/styles/index.scss";',
+      },
     },
     postcss: {
       plugins: [
@@ -91,4 +91,4 @@ export default defineConfig({
   //     },
   //   },
   // },
-})
+}))
