@@ -23,3 +23,5 @@ console.log((result & CREATE) === CREATE);
 
 // 删除 UPDATE 权限
 console.log((result ^ UPDATE));
+
+export default {}
