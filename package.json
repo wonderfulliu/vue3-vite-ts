@@ -2,6 +2,7 @@
   "name": "vue3-template-vite",
   "private": true,
   "version": "0.0.0",
+  // 设置type：module，那么导入模块必须使用esmodule的方式
   "type": "module",
   "scripts": {
     "dev": "vite",
