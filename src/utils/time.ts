@@ -26,7 +26,7 @@ export const format = (
   @param value：增加的值
   @param unit：增加的单位：day:d week:w month:m quarter:Q year:y hour:h minute:m second:s millisecond:ms
 */
-export const add = (value: number, unit?: unit): day_js => {
+export const addTime = (value: number, unit?: unit): day_js => {
   return dayjs().add(value, unit)
 }
 
