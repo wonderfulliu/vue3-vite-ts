@@ -23,5 +23,4 @@ declare module 'vue' {
   }
 }
 
-
 export {}
