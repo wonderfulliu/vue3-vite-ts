@@ -82,3 +82,6 @@ npm i -D unplugin-auto-import
 # 自动引入vue组件
 npm i unplugin-vue-components -D
 ```
+### 国际化实现方式
+1. 根据系统的语言环境，从server端获取对应的语言文件
+2. 语言文件文件放在前端，点击切换，调用api直接切换
