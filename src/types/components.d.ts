@@ -7,7 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Aside: typeof import('./../components/Aside.vue')['default']
+    Aside: typeof import('./../layout/Aside.vue')['default']
     BreadCrumb: typeof import('./../components/BreadCrumb.vue')['default']
     Cell: typeof import('./../components/Cell.vue')['default']
     Dialog: typeof import('./../components/Dialog.vue')['default']
