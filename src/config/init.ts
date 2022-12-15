@@ -11,6 +11,13 @@ export default async () => {
   }
 
   Object.keys(iGlobalVars).forEach((key) => {
-    (window as any)[key] = iGlobalVars[key as GlobalType.globalKeys]
+    ;(window as any)[key] = iGlobalVars[key as GlobalType.globalKeys]
   })
 }
+
+// export const initGlobalComponents = () => {
+//   const globalComponents = import.meta.glob('@/components/*.vue', {
+//     eager: true,
+//   })
+//   console.log(globalComponents)
+// }
