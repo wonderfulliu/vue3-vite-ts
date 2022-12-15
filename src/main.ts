@@ -13,6 +13,8 @@ import 'element-plus/dist/index.css'
 import 'normalize.css/normalize.css'
 // 引入全局样式
 import '@/styles/common.scss'
+// 字体图标（iconfont）
+import '@/assets/icon/iconfont'
 
 // 引入 vue-router
 import router from '@/router'

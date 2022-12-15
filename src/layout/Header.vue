@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SvgIcon from '@/components/SvgIcon.vue'
+import Icon from '@/components/Icon.vue'
 import logo from '@/assets/logo.png'
 import avatar from '@/assets/avatar.png'
 import arrow from '@/assets/down@2x.png'
@@ -45,7 +45,7 @@ const handleCommand = async () => {
             <el-dropdown-menu>
               <el-dropdown-item command="exit">
                 <el-icon>
-                  <SvgIcon name="exit" />
+                  <Icon icon="exit" />
                 </el-icon>
                 退出
               </el-dropdown-item>

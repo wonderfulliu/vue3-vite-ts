@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SvgIcon from '@/components/SvgIcon.vue'
+import Icon from '@/components/Icon.vue'
 import { navRoutes } from '@/router'
 
 import { useRouter, useRoute } from 'vue-router'
@@ -43,7 +43,7 @@ const handleClose: ((index: string, indexPath: string[]) => any) | undefined = (
         <el-sub-menu v-if="route.children?.length" :index="route.path">
           <template #title>
             <el-icon>
-              <SvgIcon :name="route.meta!.icon" />
+              <Icon :icon="route.meta!.icon" />
             </el-icon>
             <span>{{ route.meta!.title }}</span>
           </template>
@@ -57,7 +57,7 @@ const handleClose: ((index: string, indexPath: string[]) => any) | undefined = (
               :index="route.path + '/' + inner_route.path"
             >
               <el-icon>
-                <SvgIcon :name="inner_route.meta!.icon" />
+                <Icon :icon="inner_route.meta!.icon" />
               </el-icon>
               <span>{{ inner_route.meta!.title }}</span>
             </el-menu-item>
@@ -66,7 +66,7 @@ const handleClose: ((index: string, indexPath: string[]) => any) | undefined = (
 
         <el-menu-item v-else :index="route.path">
           <el-icon>
-            <SvgIcon :name="route.meta!.icon" />
+            <Icon :name="route.meta!.icon" />
           </el-icon>
           <span>{{ route.meta!.title }}</span>
         </el-menu-item>

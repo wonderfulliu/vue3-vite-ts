@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ArrowRight } from '@element-plus/icons-vue'
-import SvgIcon from '@/components/SvgIcon.vue'
+import Icon from '@/components/Icon.vue'
 import { useRoute } from 'vue-router'
 import { ref, Ref, watchEffect } from 'vue'
 const route = useRoute()
@@ -25,7 +25,7 @@ watchEffect(() => {
     <span class="menu-name">{{ breadcrumbList[0].title }}</span>
     <el-divider direction="vertical" class="divider" />
     <el-icon>
-      <SvgIcon :name="route.meta.icon" :font-size="16" />
+      <Icon :icon="route.meta.icon" font-size="16" />
     </el-icon>
     <el-breadcrumb :separator-icon="ArrowRight">
       <el-breadcrumb-item v-for="item in breadcrumbList">{{ item.title }}</el-breadcrumb-item>

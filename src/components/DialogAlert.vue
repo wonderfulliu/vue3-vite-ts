@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Dialog from '@/components/Dialog.vue'
-// import SvgIcon from '@/components/SvgIcon.vue'
+// import Icon from '@/components/Icon.vue'
 
 type Props = {
   modelValue?: boolean
@@ -61,7 +61,7 @@ const modelValue = computed({
     <div class="container">
       <div class="content">
         <div class="svg-container">
-          <!-- <SvgIcon :name="svg" width="24" height="24" /> -->
+          <!-- <Icon :icon="svg" width="24" height="24" /> -->
           svg解决方案
         </div>
         <slot name="content">content</slot>
