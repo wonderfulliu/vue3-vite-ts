@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import Dialog from '@/components/Dialog.vue'
-// import Icon from '@/components/Icon.vue'
-
 type Props = {
   modelValue?: boolean
+  showCancelButton?: boolean
+  showSureButton?: boolean
   loading?: boolean
-  svg?: string
+  icon?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  svg: 'warning'
+  icon: '闹钟',
+  showCancelButton: false,
+  showSureButton: true,
 })
 
 const emit = defineEmits(['open', 'opened', 'close', 'closed', 'submit', 'cancel', 'update:modelValue'])
@@ -21,18 +22,19 @@ const opened = () => {
   emit('opened')
 }
 const close = () => {
+  emit('update:modelValue', false)
   emit('close')
 }
 const closed = () => {
-  emit('update:modelValue', false)
   emit('closed')
 }
 const submit = () => {
+  emit('update:modelValue', false)
   emit('submit')
 }
 const cancel = () => {
-  emit('closed')
   emit('update:modelValue', false)
+  emit('cancel')
 }
 
 const modelValue = computed({
@@ -46,23 +48,14 @@ const modelValue = computed({
 </script>
 
 <template>
-  <Dialog
-    title="确认提示"
-    :width="400"
-    v-model="modelValue"
-    :loading="loading"
-    @open="open"
-    @opened="opened"
-    @close="close"
-    @closed="closed"
-    @cancel="cancel"
-    @submit="submit"
-  >
+  <Dialog title="确认提示" :width="400" v-model="modelValue" :loading="loading" :show-cancel-button="showCancelButton"
+    :show-sure-button="showSureButton" @open="open" @opened="opened" @close="close" @closed="closed" @cancel="cancel"
+    @submit="submit">
     <div class="container">
       <div class="content">
         <div class="svg-container">
-          <!-- <Icon :icon="svg" width="24" height="24" /> -->
-          svg解决方案
+          <Icon :icon="icon" width="24" height="24" />
+          <!-- svg解决方案 -->
         </div>
         <slot name="content">content</slot>
       </div>
@@ -77,16 +70,19 @@ const modelValue = computed({
 .container {
   width: 80%;
   margin-bottom: 50px;
+
   .content {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 26px;
+    font-weight: 600;
     color: #1f242e;
-    margin-bottom: 29px;
+    margin-bottom: 30px;
     @include flex;
+
     .svg-container {
       margin-right: 10px;
     }
   }
+
   .desc {
     padding-left: 40px;
     font-size: 14px;

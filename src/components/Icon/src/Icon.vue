@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface IProps {
   icon: string
-  fontSize?: string
+  fontSize?: string | number
   color?: string
   width?: string
   height?: string

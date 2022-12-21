@@ -10,6 +10,8 @@ type Props = {
   lockScroll?: boolean
   customClass?: string
   showClose?: boolean
+  showCancelButton?: boolean
+  showSureButton?: boolean
   loading?: boolean
   beforeClose?: (done: Function) => void
 }
@@ -20,6 +22,8 @@ const props = withDefaults(defineProps<Props>(), {
   top: '15vh',
   modal: false,
   showClose: true,
+  showCancelButton: true,
+  showSureButton: true,
   beforeClose: function (done: Function) {
     done()
   },
@@ -42,10 +46,10 @@ const opened = () => {
   emit('opened')
 }
 const close = () => {
+  emit('update:modelValue', false)
   emit('close')
 }
 const closed = () => {
-  emit('update:modelValue', false)
   emit('closed')
 }
 const submit = () => {
@@ -67,30 +71,11 @@ const modelValue = computed({
 </script>
 
 <template>
-  <el-dialog
-    v-model="modelValue"
-    :title="title"
-    :width="width"
-    :fullscreen="false"
-    :top="top"
-    :modal="modal"
-    :append-to-body="appendToBody"
-    :lock-scroll="lockScroll"
-    :custom-class="customClass"
-    :open-delay="0"
-    :close-delay="0"
-    :close-on-click-modal="false"
-    :close-on-press-escape="false"
-    :show-close="showClose"
-    :before-close="beforeClose"
-    :draggable="true"
-    :center="false"
-    :destroy-on-close="true"
-    @open="open"
-    @opened="opened"
-    @close="close"
-    @closed="closed"
-  >
+  <el-dialog v-model="modelValue" :title="title" :width="width" :fullscreen="false" :top="top" :modal="modal"
+    :append-to-body="appendToBody" :lock-scroll="lockScroll" :custom-class="customClass" :open-delay="0"
+    :close-delay="0" :close-on-click-modal="false" :close-on-press-escape="false" :show-close="showClose"
+    :before-close="beforeClose" :draggable="true" :center="false" :destroy-on-close="true" @open="open" @opened="opened"
+    @close="close" @closed="closed">
     <slot></slot>
     <template #header>
       <slot name="title"></slot>
@@ -99,15 +84,10 @@ const modelValue = computed({
       <span class="dialog-footer">
         <slot name="extra"></slot>
         <slot name="footer">
-          <el-button type="default" @click="cancel" size="small">
+          <el-button v-if="showCancelButton" type="default" @click="cancel" size="small">
             取消
           </el-button>
-          <el-button
-            type="primary"
-            @click="submit"
-            size="small"
-            :loading="loading"
-          >
+          <el-button v-if="showSureButton" type="primary" @click="submit" size="small" :loading="loading">
             确定
           </el-button>
         </slot>
@@ -116,4 +96,6 @@ const modelValue = computed({
   </el-dialog>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

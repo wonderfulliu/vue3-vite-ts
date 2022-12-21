@@ -15,7 +15,7 @@ type placement =
 
 type trigger = 'hover' | 'click' | 'focus' | 'contextmenu'
 
-type Props = {
+type IProps = {
   effect?: 'dark' | 'light'
   content?: string
   rawContent?: boolean
@@ -34,7 +34,7 @@ type Props = {
   trigger?: trigger
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<IProps>(), {
   // el-tooltip 属性
   effect: 'light',
   content: 'Tooltip内容',
@@ -51,34 +51,21 @@ const props = withDefaults(defineProps<Props>(), {
   manual: false,
   popperClass: '',
   enterable: false,
-  trigger: 'hover'
+  trigger: 'hover',
 })
-
 </script>
 
 <template>
-  <el-tooltip
-    :effect="effect"
-    :raw-content="rawContent"
-    :placement="placement"
-    :visible="visible"
-    :disabled="disabled"
-    :offset="offset"
-    :transition="transition"
-    :show-after="showAfter"
-    :show-arrow="showArrow"
-    :hide-after="hideAfter"
-    :auto-close="autoClose"
-    :manual="manual"
-    :popper-class="popperClass"
-    :enterable="enterable"
-    :trigger="trigger"
-  >
+  <el-tooltip :effect="effect" :raw-content="rawContent" :placement="placement" :visible="visible" :disabled="disabled"
+    :offset="offset" :transition="transition" :show-after="showAfter" :show-arrow="showArrow" :hide-after="hideAfter"
+    :auto-close="autoClose" :manual="manual" :popper-class="popperClass" :enterable="enterable" :trigger="trigger">
     <slot></slot>
     <template #content>
-      <slot name="content">{{ props.content }}</slot>
+      <slot name="content">{{ content }}</slot>
     </template>
   </el-tooltip>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

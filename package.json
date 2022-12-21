@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
+    "build:tsc": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,13 +23,16 @@
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.22",
+    "sortablejs": "^1.15.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5",
+    "vuedraggable": "^4.1.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.2",
     "@types/node": "^18.7.15",
+    "@types/sortablejs": "^1.15.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "autoprefixer": "^10.4.8",
     "postcss-px-to-viewport": "^1.1.1",

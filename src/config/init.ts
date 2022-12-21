@@ -1,6 +1,7 @@
 import util from '@/utils'
 
-export default async () => {
+// window 对象上绑定全局变量
+export const initGlobalVars = () => {
   // 定义全局变量相关的类型
   type globalKeys = {
     [K in GlobalType.globalKeys]?: any
@@ -15,9 +16,10 @@ export default async () => {
   })
 }
 
-// export const initGlobalComponents = () => {
-//   const globalComponents = import.meta.glob('@/components/*.vue', {
-//     eager: true,
-//   })
-//   console.log(globalComponents)
-// }
+// 语言包初始化
+// 定制主题
+// 定义全局组件
+
+export default async () => {
+  initGlobalVars()
+}

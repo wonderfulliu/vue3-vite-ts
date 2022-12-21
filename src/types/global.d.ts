@@ -12,6 +12,12 @@ declare global {
     timeId: GlobalType.timeId
     util: GlobalType.Utils
   }
+  // 扩展 HTMLDivElement
+  interface HTMLDivElement {
+    left: number
+    setCapture():void
+    releaseCapture():void
+  }
   // 定义util变量的类型，使之在ts文件中能直接被访问而不报ts错误，而不是通过Window.util
   const util: GlobalType.Utils
 }

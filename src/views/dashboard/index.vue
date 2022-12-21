@@ -1,5 +1,63 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ITitleItem } from '@/components/Table'
+const visible = ref(false)
+const handleClick = () => {
+  visible.value = true
+}
+watch(() => visible.value, (val) => {
+  console.log(val)
+})
+const tableTitle: ITitleItem[] = [
+  {
+    label: '日期',
+    prop: 'date',
+  },
+  {
+    label: '姓名',
+    prop: 'name',
+  },
+  {
+    label: '地址',
+    prop: 'address',
+    formatter: (row, column, cellValue, index) => {
+      console.log(1, row)
+      console.log(2, column)
+      console.log(3, cellValue)
+      console.log(4, index)
+      return 12
+    }
+  },
+]
+const data: any[] = [
+  {
+    date: '123',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '123',
+    name: 'ly',
+    address: 'xxx'
+  },
+]
+const handleClick1 = (scope: any) => {
+  console.log(scope)
+}
+</script>
 
-<template>dashboard</template>
+<template>
+  <Table :table-title="tableTitle" :data="data" :border="true" action-fixed="right">
+    <template #action="{scope}">
+      <el-button type="primary" size="small" @click="handleClick1(scope)">
+        添加
+      </el-button>
+      <el-button type="default" size="small">
+        取消
+      </el-button>
+    </template>
+  </Table>
+</template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>
