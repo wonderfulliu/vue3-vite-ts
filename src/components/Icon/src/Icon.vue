@@ -1,11 +1,12 @@
 <script setup lang="ts">
 interface IProps {
-  icon: string
+  icon?: string
   fontSize?: string | number
   color?: string
   width?: string
   height?: string
   backgroundColor?: string
+  size?: number | string
 }
 
 const props = withDefaults(defineProps<IProps>(), {
@@ -18,9 +19,12 @@ const props = withDefaults(defineProps<IProps>(), {
 </script>
 
 <template>
-  <svg class="icon" aria-hidden="true" :font-size="fontSize" :color="color" :style="{ width, height, backgroundColor }">
+  <svg v-if="icon" class="icon" aria-hidden="true" :font-size="fontSize" :color="color" :style="{ width, height, backgroundColor }">
     <use :xlink:href="`#icon-${icon}`"></use>
   </svg>
+  <el-icon v-else :size="size" :color="color">
+    <slot></slot>
+  </el-icon>
 </template>
 
 <style lang="scss" scoped>

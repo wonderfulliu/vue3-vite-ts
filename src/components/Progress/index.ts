@@ -1,2 +1,2 @@
-export { default  } from './src/Tooltip.vue'
+export { default  } from './src/Progress.vue'
 export * from './src/type'
