@@ -30,12 +30,797 @@ const tableTitle: ITitleItem[] = [
 ]
 const data: any[] = [
   {
-    date: '123',
+    date: '2',
     name: 'ly',
     address: 'xxx'
   },
   {
-    date: '123',
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '1',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '2',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '3',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '4',
+    name: 'ly',
+    address: 'xxx'
+  },
+  {
+    date: '5',
     name: 'ly',
     address: 'xxx'
   },
@@ -43,11 +828,17 @@ const data: any[] = [
 const handleClick1 = (scope: any) => {
   console.log(scope)
 }
+const pageChange = (page: number) => {
+  console.log(page)
+}
+const sizeChange = (size: number) => {
+  console.log(size)
+}
 </script>
 
 <template>
-  <Table :table-title="tableTitle" :data="data" :border="true" action-fixed="right">
-    <template #action="{scope}">
+  <Table :table-title="tableTitle" :data="data" @page-change="pageChange" @size-change="sizeChange">
+    <template #action="{ scope }">
       <el-button type="primary" size="small" @click="handleClick1(scope)">
         添加
       </el-button>
