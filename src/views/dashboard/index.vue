@@ -834,10 +834,17 @@ const pageChange = (page: number) => {
 const sizeChange = (size: number) => {
   console.log(size)
 }
+const src = ref()
+const file = ref<HTMLInputElement>()
+const handlePreivew = () => {
+  src.value = file.value?.files![0]
+}
 </script>
 
 <template>
-  <Table :table-title="tableTitle" :data="data" @page-change="pageChange" @size-change="sizeChange">
+  <input type="file" @change="handlePreivew" ref="file" />
+  <DisplayDocx :src="src" />
+  <!-- <Table :table-title="tableTitle" :data="data" @page-change="pageChange" @size-change="sizeChange">
     <template #action="{ scope }">
       <el-button type="primary" size="small" @click="handleClick1(scope)">
         添加
@@ -846,7 +853,7 @@ const sizeChange = (size: number) => {
         取消
       </el-button>
     </template>
-  </Table>
+  </Table> -->
 </template>
 
 <style lang="scss" scoped>
