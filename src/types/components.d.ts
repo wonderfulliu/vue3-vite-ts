@@ -12,6 +12,8 @@ declare module '@vue/runtime-core' {
     Cell: typeof import('./../components/Cell.vue')['default']
     Dialog: typeof import('./../components/Dialog/src/Dialog.vue')['default']
     DialogAlert: typeof import('./../components/DialogAlert/src/DialogAlert.vue')['default']
+    DisplayDocx: typeof import('./../components/DisplayDocx/src/DisplayDocx.vue')['default']
+    DocxPreview: typeof import('./../components/DisplayDocx/src/DocxPreview.vue')['default']
     Drawer: typeof import('./../components/Drawer.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElIcon: typeof import('element-plus/es')['ElIcon']
@@ -34,5 +36,6 @@ declare module '@vue/runtime-core' {
     TableSearch: typeof import('./../components/TableSearch.vue')['default']
     Title: typeof import('./../components/Title/src/Title.vue')['default']
     Tooltip: typeof import('./../components/Tooltip/src/Tooltip.vue')['default']
+    VideoPlay: typeof import('./../components/VideoPlay/src/VideoPlay.vue')['default']
   }
 }
