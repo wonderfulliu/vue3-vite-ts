@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { ArrowRight } from '@element-plus/icons-vue'
-import Icon from '@/components/Icon.vue'
 import { useRoute } from 'vue-router'
-import { ref, Ref, watchEffect } from 'vue'
+
 const route = useRoute()
 type breadcrumb = {
   title: string
   icon: string
 }
-const breadcrumbList: Ref<breadcrumb[]> = ref([])
+const breadcrumbList = ref<breadcrumb[]>([])
 watchEffect(() => {
   breadcrumbList.value = []
   route.matched.forEach((item) => {
@@ -34,17 +33,20 @@ watchEffect(() => {
 </template>
 
 <style lang="scss" scoped>
+$bread-height: 35px;
 .breadcrumb-container {
   .menu-name {
     font-size: 24px;
     color: #1f242e;
     font-weight: 500;
   }
+
   .divider {
     margin: 0 24px;
   }
+
   box-sizing: border-box;
-  height: $breadHeight;
+  height: $bread-height;
   display: flex;
   align-items: center;
   padding-bottom: 10px;

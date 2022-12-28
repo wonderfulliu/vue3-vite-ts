@@ -1,18 +1,11 @@
 <script setup lang="ts">
-const props = defineProps({
-  visible: {
-    type: Boolean,
-    default: false,
-  },
-  title: {
-    type: String,
-    default: '',
-  },
-  size: {
-    type: [Number, String],
-    default: '30%'
-  }
-})
+type Props = {
+  visible: boolean
+  title: string
+  size: number | string
+}
+
+const props = withDefaults(defineProps<Props>(), {})
 
 const emit = defineEmits(['open', 'opened', 'close', 'closed'])
 

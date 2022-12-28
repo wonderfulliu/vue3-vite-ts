@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { Edit as BianJi } from '@element-plus/icons-vue'
 
 const props = defineProps(['text'])
