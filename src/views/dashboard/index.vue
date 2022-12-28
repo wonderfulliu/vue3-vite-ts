@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ITitleItem } from '@/components/Table'
+import { Ioption } from '@/components/Search'
 const visible = ref(false)
 const handleClick = () => {
   visible.value = true
@@ -839,11 +840,39 @@ const file = ref<HTMLInputElement>()
 const handlePreivew = () => {
   src.value = file.value?.files![0]
 }
+const options: Ioption[] = [
+  {
+    label: '输入框',
+    prop: 'input',
+    type: 'input'
+  },
+  {
+    label: '时间',
+    prop: 'time',
+    type: 'time'
+  },
+  {
+    label: '下拉',
+    prop: 'select',
+    type: 'select',
+    options: [
+      {
+        label: '刘洋',
+        value: '1'
+      },
+      {
+        label: '刘洋2',
+        value: '2'
+      },
+    ]
+  }
+]
 </script>
 
 <template>
-  <input type="file" @change="handlePreivew" ref="file" />
-  <DisplayDocx :src="src" />
+  <Search :form-options="options" />
+  <!-- <input type="file" @change="handlePreivew" ref="file" />
+  <DisplayDocx :src="src" /> -->
   <!-- <Table :table-title="tableTitle" :data="data" @page-change="pageChange" @size-change="sizeChange">
     <template #action="{ scope }">
       <el-button type="primary" size="small" @click="handleClick1(scope)">

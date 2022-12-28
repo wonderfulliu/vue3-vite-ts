@@ -1,25 +1,21 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
 import { FormInstance } from 'element-plus'
+import { Ioption } from './type'
 import SearchItem from './SearchItem.vue'
 
-const props = defineProps({
-  formOptions: {
-    type: Array,
-    required: true,
-    default() {
-      return []
-    },
-  },
-})
+type Props = {
+  formOptions: Ioption[]
+}
+const props = withDefaults(defineProps<Props>(), {})
 
 const emit = defineEmits(['onSubmit', 'resetForm'])
 
 const formRef = ref<FormInstance>()
 
-const model = reactive({})
+const model = reactive<{ [K: string]: any }>({})
 
 const onSubmit = () => {
+  console.log(model)
   emit('onSubmit', model)
 }
 const resetForm = (formEl: FormInstance | undefined) => {
@@ -37,7 +33,7 @@ const resetForm = (formEl: FormInstance | undefined) => {
       :prop="item.prop"
       :label="item.label"
     >
-      <SearchItem v-model="model[item.prop]" :itemOptions="item" />
+      <SearchItem v-model="model[item.prop]" :option="item" />
     </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="onSubmit">查询</el-button>

@@ -1,28 +1,31 @@
 <script setup lang="ts">
-const props = defineProps({
-  modelValue: {
-    required: true,
+import { Ioption } from './type'
+type Props = {
+  modelValue: any
+  option: Ioption
+}
+const props = withDefaults(defineProps<Props>(), {})
+const emit = defineEmits(['update:modelValue'])
+
+const modelValue = computed({
+  get() {
+    return props.modelValue
   },
-  itemOptions: {
-    type: Object,
-    required: false,
-    default: function () {
-      return {}
-    },
+  set(val) {
+    emit('update:modelValue', val)
   },
 })
-const emit = defineEmits(['update:modelValue'])
 </script>
 
 <template>
   <el-input
-    v-if="itemOptions.type === 'input'"
+    v-if="option.type === 'input'"
     v-model="modelValue"
     @input="emit('update:modelValue', $event)"
   ></el-input>
 
   <el-date-picker
-    v-if="itemOptions.type === 'time'"
+    v-if="option.type === 'time'"
     v-model="modelValue"
     @change="emit('update:modelValue', $event)"
     type="datetimerange"
@@ -35,13 +38,13 @@ const emit = defineEmits(['update:modelValue'])
   />
 
   <el-select
-    v-if="itemOptions.type === 'select'"
+    v-if="option.type === 'select'"
     v-model="modelValue"
     @change="emit('update:modelValue', $event)"
     clearable
   >
     <el-option
-      v-for="item in itemOptions.options"
+      v-for="item in option.options"
       :key="item.value"
       :label="item.label"
       :value="item.value"
