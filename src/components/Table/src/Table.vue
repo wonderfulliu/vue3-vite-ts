@@ -186,8 +186,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-$titleHeight: 70px; // header 高度
-$paginationHeight: 80px; // 分页高度
+$titleHeight: 35px; // header 高度
+$paginationHeight: 45px; // 分页高度
 
 .table-container {
   height: 100%;
@@ -196,7 +196,7 @@ $paginationHeight: 80px; // 分页高度
     cursor: move;
   }
 
-  .title-content {
+  .title-content, .ignore_h {
     height: $titleHeight;
     padding: 0 16px;
     @include flex($jc: space-between);
@@ -206,25 +206,25 @@ $paginationHeight: 80px; // 分页高度
     }
   }
 
-  .pagination-content {
+  .pagination-content, .ignore_h {
     height: $paginationHeight;
     padding: 0 16px;
     @include flex();
   }
 
-  .table-content {
+  .table-content, .ignore_h {
     height: calc(100% - $paginationHeight - $titleHeight);
   }
 
-  .table-content-nopagination {
+  .table-content-nopagination, .ignore_h {
     height: calc(100% - $titleHeight);
   }
 
-  .table-content-notitle {
+  .table-content-notitle, .ignore_h {
     height: calc(100% - $paginationHeight);
   }
 
-  .table-content-noall {
+  .table-content-noall, .ignore_h {
     height: calc(100%);
   }
 }

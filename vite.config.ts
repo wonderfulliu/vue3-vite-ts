@@ -57,7 +57,7 @@ export default defineConfig(async ({ command, mode }) => ({
           propList: ['*'],
           viewportUnit: 'vw',
           fontViewportUnit: 'vw',
-          selectorBlackList: [],
+          selectorBlackList: ['ignore_h'],
           minPixelValue: 1,
           mediaQuery: false,
           replace: true,
