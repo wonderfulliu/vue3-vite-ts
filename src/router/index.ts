@@ -15,8 +15,12 @@ declare module 'vue-router' {
 const Layout = {
   template: '<router-view></router-view>'
 }
-
+// 开发路由
 export const navRoutes: Array<RouteRecordRaw> = [
+  
+]
+// 功能实例路由
+export const utilRoutes: Array<RouteRecordRaw> = [
   // 监控指标
   {
     path: 'dashboard',
@@ -25,15 +29,24 @@ export const navRoutes: Array<RouteRecordRaw> = [
     meta: {
       requiresAuth: false,
       title: 'DashBoard',
+      icon: '闹钟'
     },
   },
 ]
 const routes: Array<RouteRecordRaw> = [
+  // 开发路由
+  // {
+  //   path: '/',
+  //   redirect: '/dashboard',
+  //   component: () => import('@/views/index.vue'),
+  //   children: [...navRoutes],
+  // },
+  // 功能实例路由
   {
     path: '/',
     redirect: '/dashboard',
     component: () => import('@/views/index.vue'),
-    children: [...navRoutes],
+    children: [...utilRoutes],
   },
   // 404
   {

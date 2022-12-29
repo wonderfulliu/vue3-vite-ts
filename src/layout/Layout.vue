@@ -1,13 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { header, aside, breadcrumb, content } = useSlots()
+</script>
 
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header>
+      <el-header v-if="header" :class="[!!header ? '' : 'header-no']">
         <slot name="header"></slot>
       </el-header>
-      <el-container>
-        <el-aside>
+      <el-container :class="[header ? 'container-header' : 'container-no-header']">
+        <el-aside v-if="aside" style="width: 240px">
           <slot name="aside"></slot>
         </el-aside>
         <el-main class="main-container">
@@ -20,22 +22,41 @@
 </template>
 
 <style lang="scss" scoped>
-$mb: h(20px);
+$layout-header-height: 60px;
+
 .common-layout {
   height: 100vh;
   background-color: $background-color;
+
   .el-container {
-    .el-header {
-      margin-bottom: $mb;
+
+    .el-header,
+    .ignore_h {
       height: $layout-header-height;
     }
-    .el-aside {
-      width: $layout-aside-width;
-      height: calc(100vh - $layout-header-height - $mb);
+
+    .header-no {
+      height: 0;
     }
-    .main-container {
-      height: calc(100vh - $layout-header-height - $mb);
-      padding: 0 15px h(15px) 15px;
+
+    .el-aside {
+      height: 100%;
+      box-shadow: 0px 0px 10px #ccc;;
+    }
+
+    .container-header,
+    .ignore_h {
+      height: calc(100vh - $layout-header-height);
+    }
+
+    .container-no-header {
+      height: calc(100vh);
+    }
+
+    .main-container,
+    .ignore_h {
+      height: 100%;
+      padding: 10px;
       background-color: transparent;
     }
   }

@@ -1,7 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
 
 <template>
-  <router-view></router-view>
+  <Layout>
+    <template #aside>
+      <Aside />
+    </template>
+    <template #content>
+      <router-view />
+    </template>
+  </Layout>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>
