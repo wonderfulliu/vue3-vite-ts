@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Icon from '@/components/Icon'
-import { toolsRoutes } from '@/router'
+import { myRoutes } from '@/router'
 import { MenuItemClicked, ElMenu, ElSubMenu, ElMenuItem } from 'element-plus'
 import { useRouter, useRoute, NavigationFailure } from 'vue-router'
 
@@ -45,7 +45,7 @@ const handleSelect:
     @close="handleClose"
     @select="handleSelect"
   >
-    <template v-for="(route, index) in toolsRoutes" :key="index">
+    <template v-for="(route, index) in myRoutes" :key="index">
       <template v-if="!route.meta!.hidden">
         <el-sub-menu v-if="route.children?.length" :index="route.path">
           <template #title>

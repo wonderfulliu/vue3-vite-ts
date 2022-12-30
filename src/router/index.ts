@@ -18,7 +18,7 @@ const Layout = {
 // 开发路由
 export const navRoutes: Array<RouteRecordRaw> = []
 // 功能实例路由
-export const toolsRoutes: Array<RouteRecordRaw> = [
+export const myRoutes: Array<RouteRecordRaw> = [
   // 监控指标
   {
     path: 'dashboard',
@@ -96,7 +96,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     redirect: '/dashboard',
     component: () => import('@/views/index.vue'),
-    children: [...toolsRoutes],
+    children: [...myRoutes],
   },
   // 404
   {
