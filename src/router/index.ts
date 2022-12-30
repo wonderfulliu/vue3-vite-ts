@@ -31,6 +31,15 @@ export const toolsRoutes: Array<RouteRecordRaw> = [
     },
   },
   {
+    path: 'study',
+    component: Layout,
+    meta: {
+      title: '学习',
+      icon: '学习'
+    },
+    children: []
+  },
+  {
     path: 'tool',
     component: Layout,
     meta: {
@@ -73,15 +82,6 @@ export const toolsRoutes: Array<RouteRecordRaw> = [
       },
     ],
   },
-  {
-    path: 'study',
-    component: Layout,
-    meta: {
-      title: '学习',
-      icon: '学习'
-    },
-    children: []
-  }
 ]
 const routes: Array<RouteRecordRaw> = [
   // 开发路由
