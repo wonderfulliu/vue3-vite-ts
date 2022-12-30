@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { utilRoutes } from '@/router'
-import { useRouter, useRoute } from 'vue-router'
+import Icon from '@/components/Icon'
+import { toolsRoutes } from '@/router'
+import { MenuItemClicked, ElMenu, ElSubMenu, ElMenuItem } from 'element-plus'
+import { useRouter, useRoute, NavigationFailure } from 'vue-router'
 
 const onActiveMenu = computed(() => {
   const route = useRoute()
@@ -23,30 +25,51 @@ const handleClose: ((index: string, indexPath: string[]) => any) | undefined = (
 ) => {
   // console.log(key, keyPath)
 }
+const handleSelect:
+  | ((
+      index: string,
+      indexPath: string[],
+      item: MenuItemClicked,
+      routerResult?: Promise<void | NavigationFailure> | undefined
+    ) => any)
+  | undefined = (index: string, indexPath: string[], item, routeResult) => {}
 </script>
 
 <template>
-  <el-menu :default-active="onActiveMenu" :collapse="false" :router="true" :unique-opened="true" @open="handleOpen"
-    @close="handleClose" >
-    <template v-for="(route, index) in utilRoutes" :key="index">
+  <el-menu
+    :default-active="onActiveMenu"
+    :collapse="false"
+    :router="true"
+    :unique-opened="false"
+    @open="handleOpen"
+    @close="handleClose"
+    @select="handleSelect"
+  >
+    <template v-for="(route, index) in toolsRoutes" :key="index">
       <template v-if="!route.meta!.hidden">
         <el-sub-menu v-if="route.children?.length" :index="route.path">
           <template #title>
             <Icon :icon="route.meta!.icon" />
-            <span>{{ route.meta!.title }}</span>
+            <span class="menu-text">{{ route.meta!.title }}</span>
           </template>
 
-          <template v-for="(inner_route, inner_index) in route.children" :key="inner_index">
-            <el-menu-item v-if="!inner_route.meta!.hidden" :index="route.path + '/' + inner_route.path">
+          <template
+            v-for="(inner_route, inner_index) in route.children"
+            :key="inner_index"
+          >
+            <el-menu-item
+              v-if="!inner_route.meta!.hidden"
+              :index="`/${route.path}/${inner_route.path}`"
+            >
               <Icon :icon="inner_route.meta!.icon" />
-              <span>{{ inner_route.meta!.title }}</span>
+              <span class="menu-text">{{ inner_route.meta!.title }}</span>
             </el-menu-item>
           </template>
         </el-sub-menu>
 
-        <el-menu-item v-else :index='`/${route.path}`'>
+        <el-menu-item v-else :index="`/${route.path}`">
           <Icon :icon="route.meta!.icon" />
-          <span style="margin-left: 8px">{{ route.meta!.title }}</span>
+          <span class="menu-text">{{ route.meta!.title }}</span>
         </el-menu-item>
       </template>
     </template>
@@ -54,22 +77,30 @@ const handleClose: ((index: string, indexPath: string[]) => any) | undefined = (
 </template>
 
 <style lang="scss" scoped>
-$menu-height: 45px;
+$menu-height: 40px;
 
 .el-menu {
   border-right: none;
 
-  .el-menu-item, .ignore_h {
+  .menu-text {
+    margin-left: 10px;
+  }
+
+  .el-menu-item,
+  .ignore_h {
     height: $menu-height;
+    margin-bottom: 5px;
 
     &.is-active {
-      background-color: rgba($color-primary, .1);
+      background-color: rgba($color-primary, 0.1);
       color: $color-primary;
     }
   }
 
-  :deep() .el-sub-menu__title {
-    height: $menu-height;
+  :deep(.el-sub-menu, .ignore_h) {
+    .el-sub-menu__title {
+      height: $menu-height;
+    }
   }
 }
 </style>
