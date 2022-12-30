@@ -32,6 +32,39 @@ export const utilRoutes: Array<RouteRecordRaw> = [
       icon: '闹钟'
     },
   },
+  // JsonEditor
+  {
+    path: 'json-editor',
+    component: () => import('@/views/Tools/Json_Editor.vue'),
+    name: 'JsonEditor',
+    meta: {
+      requiresAuth: false,
+      title: 'JsonEditor',
+      icon: '编辑器'
+    },
+  },
+  // 富文本编辑器-quill
+  {
+    path: 'quill',
+    component: () => import('@/views/Tools/Quill_.vue'),
+    name: 'Quill',
+    meta: {
+      requiresAuth: false,
+      title: 'Quill',
+      icon: '富文本'
+    },
+  },
+  // 富文本编辑器-wangeditor
+  {
+    path: 'wang-editor',
+    component: () => import('@/views/Tools/Wang_Editor.vue'),
+    name: 'WangEditor',
+    meta: {
+      requiresAuth: false,
+      title: 'WangEditor',
+      icon: '富文本'
+    },
+  },
 ]
 const routes: Array<RouteRecordRaw> = [
   // 开发路由

@@ -31,9 +31,11 @@ declare module '@vue/runtime-core' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     Header: typeof import('./../layout/Header.vue')['default']
     Icon: typeof import('./../components/Icon/src/Icon.vue')['default']
+    JsonEditor: typeof import('./../components/JsonEditor/src/JsonEditor.vue')['default']
     Layout: typeof import('./../layout/Layout.vue')['default']
     Pagination: typeof import('./../components/Pagination/src/Pagination.vue')['default']
     Progress: typeof import('./../components/Progress/src/Progress.vue')['default']
+    Quill: typeof import('./../components/Quill/src/Quill.vue')['default']
     Resize: typeof import('./../components/Resize/src/Resize.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -45,5 +47,6 @@ declare module '@vue/runtime-core' {
     Title: typeof import('./../components/Title/src/Title.vue')['default']
     Tooltip: typeof import('./../components/Tooltip/src/Tooltip.vue')['default']
     VideoPlay: typeof import('./../components/VideoPlay/src/VideoPlay.vue')['default']
+    WangEditor: typeof import('./../components/WangEditor/src/WangEditor.vue')['default']
   }
 }
