@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // 核心文件
 // 引入CodeMirror和基础样式
-import CodeMirror from "codemirror";
+import CodeMirror, { EditorFromTextArea } from "codemirror";
 import "codemirror/lib/codemirror.css";
 // JSON代码高亮需要由JavaScript插件支持
 import "codemirror/mode/javascript/javascript.js";
@@ -43,39 +43,37 @@ import "codemirror/addon/lint/json-lint.js";
 import jsonlint from "jsonlint-mod";
 window.jsonlint = jsonlint;
 
-const props = defineProps({
-  json: {
-    type: String,
-    default: ''
-  }
-})
+type Props = {
+  json?: string
+}
+const props = withDefaults(defineProps<Props>(), {})
 
 const emit = defineEmits(['getEditorValue'])
 
-let jsonEditor = ref(null)
-const myRef = ref(null)
+let jsonEditor = ref<EditorFromTextArea>()
+const myRef = ref<HTMLTextAreaElement>()
 
-watch(() => props.json, () => {
-  const editorValue = jsonEditor.getValue()
+watch(() => props.json, (val) => {
+  const editorValue = jsonEditor.value!.getValue()
   if (val !== editorValue) {
-    jsonEditor.setValue(props.json)
+    jsonEditor.value!.setValue(props.json!)
   }
 })
 
 const initEditor = () => {
-  jsonEditor = CodeMirror.fromTextArea(myRef.value, {
+  jsonEditor.value = CodeMirror.fromTextArea(myRef.value!, {
     mode: 'application/json', // JS高亮显示
     indentUnit: 2, // 缩进单位，默认2
     theme: 'rubyblue', // 设置主题
     lint: true, // 实现语法报错功能
     tabSize: 2,
     smartIndent: true, // 是否智能缩进
-    styleActiveLine: true, // 当前行高亮
+    // styleActiveLine: true, // 当前行高亮
     lineNumbers: true, // 显示行号
     lineWrapping: true, // 自动换行
     matchBrackets: true, // 括号匹配显示
     autoCloseBrackets: true, // 输入和退格时成对
-    autoRefresh: true, // 自动刷新
+    // autoRefresh: true, // 自动刷新
     // keyMap: "sublime", // 绑定sublime快捷键
     // 开启代码折叠
     foldGutter: true,
@@ -99,7 +97,7 @@ const initEditor = () => {
     },
   })
 
-  jsonEditor.on('change', cm => {
+  jsonEditor.value.on('change', cm => {
     emit('getEditorValue', cm.getValue())
   })
 }
@@ -110,7 +108,7 @@ onMounted(() => {
 
 // methods
 const refresh = () => {
-  jsonEditor && jsonEditor.refresh()
+  jsonEditor.value && jsonEditor.value.refresh()
 }
 
 </script>
