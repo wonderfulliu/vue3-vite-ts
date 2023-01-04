@@ -82,7 +82,8 @@ $menu-height: 40px;
 .el-menu {
   border-right: none;
 
-  .menu-text {
+  .menu-text,
+  .ignore_h {
     margin-left: 10px;
   }
 
