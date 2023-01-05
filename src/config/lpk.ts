@@ -48,10 +48,7 @@ export type Ilpk = typeof lpk
 export const lpk = (key: string, option?: { index?: number, default?: string }): string => {
   const mixValue = tbLpk[key]
   if(isArray(mixValue)) {
-    if(!mixValue.length) {
-      return option?.default || key
-    }
-    return mixValue[option?.index || 0] || key
+    return mixValue[option?.index || 0] || option?.default || key
   }
   return mixValue || option?.default || key
 }
