@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     DisplayDocx: typeof import('./../components/DisplayDocx/src/DisplayDocx.vue')['default']
     Drawer: typeof import('./../components/Drawer/src/Drawer.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElButton: typeof import('element-plus/es')['ElButton']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']

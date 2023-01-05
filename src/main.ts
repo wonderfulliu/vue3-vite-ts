@@ -36,6 +36,7 @@ import pinia from '@/store'
    * 3. 初始化状态管理、路由、UI组件库
    */ 
   app.config.globalProperties.util = window.util
+  app.config.globalProperties.lpk = window.lpk
   app
     .use(router)
     .use(pinia)
