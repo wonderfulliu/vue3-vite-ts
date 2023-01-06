@@ -1,13 +1,17 @@
 <script setup lang="ts">
+import NotFound from '@/assets/image/404.png'
 import { useRouter, useRoute } from 'vue-router'
 const { go } = useRouter()
 </script>
 
 <template>
   <div class="not-found">
-    <el-result icon="error" title="Page Not Found" sub-title="请跳转有效路由">
+    <el-result title="" sub-title="">
+      <template #icon>
+        <el-image :src="NotFound" />
+      </template>
       <template #extra>
-        <el-button type="primary" @click="go(-1)">返回</el-button>
+        <Icon icon="返回" color="rgba(255,255,255, 0.8)" class="back" font-size="26" @click="go(-1)" />
       </template>
     </el-result>
   </div>
@@ -15,7 +19,30 @@ const { go } = useRouter()
 
 <style lang="scss" scoped>
 .not-found {
-  height: 75vh;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #111;
   @include flex($jc: center);
+
+  :deep(.el-result) {
+    .el-result__icon img {
+      height: 60vh;
+    }
+
+    .el-result__title>p {
+      color: #fff;
+    }
+
+    .el-result__subtitle>p {
+      color: rgba(#fff, 0.6);
+    }
+  }
+
+  .back {
+    position: absolute;
+    top: 55px;
+    right: 70px;
+    cursor: pointer;
+  }
 }
 </style>
