@@ -2,4 +2,9 @@
 @import './variable.scss';
 @import './mixin.scss';
 @import './custom.scss';
-@import './theme/theme-handle.scss';
+// scss 一键换肤
+// @import './theme-scss/theme-handle.scss';
+// css 一键换肤
+@import './theme-css/theme-base.scss';
+@import './theme-css/theme-blue.scss';
+@import './theme-css/theme-cyan.scss';

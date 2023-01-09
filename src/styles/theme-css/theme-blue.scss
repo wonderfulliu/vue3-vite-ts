@@ -1,0 +1,18 @@
+[data-theme='blue'] {
+  // 主题基础色：所有的配色基于该基础色
+  // 基础色通常不会直接在 UI 中使用，而是根据不同的场景定义适用于厂前场景的心得变量
+  --color-theme-1: #e6f4ff;
+  --color-theme-2: #bae0ff;
+  --color-theme-3: #91caff;
+  --color-theme-4: #69b1ff;
+  --color-theme-5: #4096ff;
+  --color-theme-6: #1677ff;
+  --color-theme-7: #0958d9;
+  --color-theme-8: #003eb3;
+  --color-theme-9: #002c8c;
+  --color-theme-10: #001d66;
+
+  // 场景适配
+  --primary-bg: var(--color-theme-2);
+  --primary-color: var(--color-white-1);
+}

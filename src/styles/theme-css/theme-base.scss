@@ -1,0 +1,8 @@
+// CSS :root 伪类选择器匹配文档树的根元素。在 HTML 文档中，:root 表示 html 选择器
+// 这里存放的是项目中的基础色，可以在主题文件中使用
+:root {
+  // 基础色，由浅入深
+  --color-white-1: #ffffff;
+  --color-white-2: #d9d9d9;
+  --color-white-3: #666666;
+}

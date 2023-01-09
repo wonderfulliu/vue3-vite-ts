@@ -3,6 +3,7 @@ import * as storageTools from './storage'
 import * as timeTools from './time'
 import * as tools from './tools'
 import { changeLocale } from '@/config/lpk'
+import { changeTheme } from '@/config/theme'
 
 const utils = {
   // 文件操作相关
@@ -14,7 +15,8 @@ const utils = {
   // 其他工具
   Tool: {
     ...tools,
-    changeLocale
+    changeLocale,
+    changeTheme
   },
 }
 export type IUtils = typeof utils

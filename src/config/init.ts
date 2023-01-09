@@ -1,5 +1,6 @@
 import util from '@/utils'
 import { initLpk, lpk } from './lpk'
+import { initTheme } from './theme'
 
 // window 对象上绑定全局变量
 export const initGlobalVars = () => {
@@ -22,7 +23,8 @@ export default async () => {
   // window 对象上绑定全局变量
   initGlobalVars()
   // 语言包初始化
-  initLpk()
+  // initLpk()
   // 定制主题
+  // initTheme()
   // 定义全局组件
 }

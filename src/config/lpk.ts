@@ -1,5 +1,5 @@
 import { isArray } from 'lodash'
-import { LOCALE, LOCALE_OPTIONS } from './const'
+import { LOCALE, LOCALE_OPTIONS } from '../constant/const'
 // 保存语言包的全局变量
 type ILpk = Record<string, string | string[]>
 let tbLpk: ILpk = {}
