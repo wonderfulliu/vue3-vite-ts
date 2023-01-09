@@ -93,8 +93,8 @@ $menu-height: 40px;
     margin-bottom: 5px;
 
     &.is-active {
-      background-color: rgba($color-primary, 0.1);
-      color: $color-primary;
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
     }
   }
 
