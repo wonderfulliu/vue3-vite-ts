@@ -1,0 +1,18 @@
+$themes: (
+  blue: (
+    primary-bg: #1996e2,
+    primary-color: $primary-color,
+    menu-bg: #41c4f8,
+    menu-text-color: #fff,
+    normal-size: 12px,
+    big-size: 20px,
+  ),
+  black: (
+    primary-bg: #000,
+    primary-color: #000,
+    menu-bg: #343346,
+    menu-text-color: #fff,
+    normal-size: 20px,
+    big-size: 40px,
+  ),
+);
