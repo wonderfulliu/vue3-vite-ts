@@ -1,5 +1,5 @@
 import { RouteLocationNormalized } from 'vue-router'
-import router from './index'
+import { initRouter } from './index'
 
 // 访问白名单
 const whiteList = []
@@ -18,6 +18,10 @@ async function canUserAccess(to: RouteLocationNormalized) {
   return true
 }
 
-router.beforeEach(async (to, from) => {
+initRouter().beforeEach(async (to, from) => {
   return canUserAccess(to)
+})
+
+initRouter().afterEach(async (to, from) => {
+  document.title = to.meta.title!
 })

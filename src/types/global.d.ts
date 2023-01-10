@@ -34,4 +34,16 @@ declare module 'vue' {
   }
 }
 
+// 扩充 vue-router RouteMeta 接口
+declare module 'vue-router' {
+  interface RouteMeta {
+    requiresAuth?: boolean
+    title?: string
+    icon?: string
+    auth?: Array<number>
+    activeMenu?: string
+    hidden?: boolean
+  }
+}
+
 export {}

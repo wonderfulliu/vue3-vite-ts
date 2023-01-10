@@ -1,16 +1,15 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-// import Layout from '@/components/Layout.vue'
-
-declare module 'vue-router' {
-  interface RouteMeta {
-    requiresAuth?: boolean
-    title?: string
-    icon?: string
-    auth?: Array<number>
-    activeMenu?: string
-    hidden?: boolean
-  }
-}
+/**
+ * 1. 初始化基础模块的路由配置
+ * 2. 初始化各业务模块的路由配置
+ * 3. 对路由守卫进行处理
+ * 4. keep-alive 的使用
+ */
+import {
+  createRouter,
+  createWebHashHistory,
+  Router,
+  RouteRecordRaw,
+} from 'vue-router'
 
 const Layout = {
   template: '<router-view></router-view>',
@@ -35,16 +34,16 @@ export const myRoutes: Array<RouteRecordRaw> = [
     component: Layout,
     meta: {
       title: '学习',
-      icon: '学习'
+      icon: '学习',
     },
-    children: []
+    children: [],
   },
   {
     path: 'tool',
     component: Layout,
     meta: {
       title: '工具库',
-      icon: '工具'
+      icon: '工具',
     },
     children: [
       // JsonEditor
@@ -102,13 +101,19 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
+    meta: {
+      title: 'Page Not Found'
+    },
     component: () => import('@/views/404/index.vue'),
   },
 ]
 
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
-})
-
-export default router
+let router: Router | null = null
+export const initRouter: () => Router = () => {
+  if (router) return router
+  router = createRouter({
+    history: createWebHashHistory(),
+    routes,
+  })
+  return router
+}

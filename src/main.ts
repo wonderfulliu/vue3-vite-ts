@@ -17,7 +17,7 @@ import '@/styles/common.scss'
 import '@/assets/icon/iconfont'
 
 // 引入 vue-router
-import router from '@/router'
+import { initRouter } from '@/router'
 import '@/router/permission'
 // 引入 store
 import pinia from '@/store'
@@ -38,7 +38,7 @@ import pinia from '@/store'
   app.config.globalProperties.util = window.util
   app.config.globalProperties.lpk = window.lpk
   app
-    .use(router)
+    .use(initRouter())
     .use(pinia)
     // size：使用的表单组件全部 small 格式，语言为中文
     .use(ElementPlus, { size: 'small', locale: zhCn })
