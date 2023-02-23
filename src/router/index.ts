@@ -81,6 +81,26 @@ export const myRoutes: Array<RouteRecordRaw> = [
       },
     ],
   },
+  {
+    path: 'threejs',
+    component: Layout,
+    meta: {
+      title: 'ThreeJs',
+      icon: '3d',
+    },
+    children: [
+      {
+        path: 'demo',
+        component: () => import('@/views/ThreeJs/Demo.vue'),
+        name: 'ThreeJsDemo',
+        meta: {
+          requiresAuth: false,
+          title: 'Demo',
+          icon: 'demo',
+        },
+      },
+    ],
+  },
 ]
 const routes: Array<RouteRecordRaw> = [
   // 开发路由
