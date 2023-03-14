@@ -79,6 +79,17 @@ export const myRoutes: Array<RouteRecordRaw> = [
           icon: '富文本',
         },
       },
+      // 甘特图
+      {
+        path: 'gantt',
+        component: () => import('@/views/Tools/Gantt/index.vue'),
+        name: 'Gantt',
+        meta: {
+          requiresAuth: false,
+          title: 'Gantt',
+          icon: '甘特图',
+        },
+      },
     ],
   },
   {
