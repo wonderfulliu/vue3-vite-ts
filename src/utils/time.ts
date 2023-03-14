@@ -12,6 +12,24 @@ type date = string | number | day_js | Date | null | undefined
 type unit = dayjs.ManipulateType | undefined
 
 /*
+  返回 dayjs 对象
+*/
+export const dayjsObj = (
+  date?: date,
+): day_js => {
+  return dayjs(date)
+}
+
+/*
+  时间戳
+*/
+export const stamp = (
+  date?: date,
+): number => {
+  return dayjs(date).valueOf()
+}
+
+/*
   时间格式化
 */
 export const format = (

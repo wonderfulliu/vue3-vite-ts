@@ -2,6 +2,7 @@ import { ref, h } from 'vue'
 /**
  * Highcharts Gantt JS v9.3.1 (2021-11-05)
  * 将draggable-points的两个module直接添加到了highcharts-gantt里面，所以不需要再引入事件的js
+ * 1014 行调整颜色
  */
 /* eslint-disable */
 ;('use strict')
